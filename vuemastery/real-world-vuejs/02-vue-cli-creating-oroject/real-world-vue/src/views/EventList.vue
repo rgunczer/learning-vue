@@ -1,9 +1,28 @@
 <template>
-  <h1>Events Listing</h1>
+  <div>
+    <h1>Events Listings</h1>
+    <EventCard />
+
+    <router-link :to="{ name: 'event-show', params: { id: 12 } }"
+      >Show Event #1</router-link
+    >
+  </div>
 </template>
 
 <script>
-export default {}
+import EventCard from '@/components/EventCard.vue'
+
+export default {
+  components: {
+    EventCard
+  }
+}
 </script>
 
-<style></style>
+<style lang="scss">
+$color: #ff0000;
+
+h1 {
+  background-color: $color;
+}
+</style>
